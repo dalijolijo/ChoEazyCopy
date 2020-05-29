@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:ChoEazyCopy"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
     x:Class="ChoEazyCopy.MainWindow"
-    Title="ChoEazyCopy - Cinchoo Inc."
+    Title="EasyCopy - by Bergen &amp; van der Meer"
     Height="505"
     Width="798"
     MinHeight="505"
@@ -17,7 +17,7 @@
     BorderThickness="1"
     TitleCaps="False"
     ResizeMode="CanResizeWithGrip"
-    Loaded="MyWindow_Loaded" Icon="App.ico" Closing="Window_Closing" ContentRendered="MyWindow_ContentRendered">
+    Loaded="MyWindow_Loaded" Icon="App.ico" Closing="Window_Closing" ContentRendered="MyWindow_ContentRendered" Padding="0" UseLayoutRounding="True" WindowState="Maximized" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <ContextMenu x:Key="TextBoxContextMenu" Background="White">
             <MenuItem Command="ApplicationCommands.Copy">
@@ -109,12 +109,13 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70*" MinWidth="400" />
+            <ColumnDefinition Width="128*" MinWidth="400" />
+            <ColumnDefinition Width="407*"/>
             <ColumnDefinition Width="3" />
-            <ColumnDefinition Width="30*" MinWidth="250" />
+            <ColumnDefinition Width="250*" MinWidth="250" />
         </Grid.ColumnDefinitions>
 
-        <ToolBarTray Grid.Row="0" Grid.Column="0" Width="Auto">
+        <ToolBarTray Grid.Row="0" Grid.Column="0" Width="Auto" Grid.ColumnSpan="2">
             <ToolBarTray.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
             </ToolBarTray.Background>
@@ -228,7 +229,7 @@
         x:Name="dockPanel1"
         VerticalAlignment="Stretch"
         LastChildFill="True"
-        FocusManager.FocusedElement="{Binding ElementName=txtFolder}">
+        FocusManager.FocusedElement="{Binding ElementName=txtFolder}" Grid.ColumnSpan="2">
             <Grid
             Width="Auto"
             DockPanel.Dock="Top">
@@ -240,7 +241,7 @@
                 Margin="5"
                 Height="Auto"
                 Grid.Column="0"
-                Header="Choose Folders">
+                Header="Choose Folders" Background="#CC14345B">
                     <Grid
                     Width="Auto"
                     Height="Auto"
@@ -339,7 +340,7 @@
                 Grid.Row="0"
                 Header="RoboCopy Command"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
+                VerticalAlignment="Stretch" Background="#CC14345B">
                     <TextBox
                     Margin="0,3,0,2"
                     HorizontalAlignment="Stretch"
@@ -357,7 +358,7 @@
                 Margin="5,0,5,5"
                 Grid.Row="2"
                 Header="Output"
-                VerticalAlignment="Stretch">
+                VerticalAlignment="Stretch" Background="#CC14345B">
                     <TextBox
                     Margin="0,3,0,2"
                     VerticalAlignment="Stretch"
@@ -367,15 +368,15 @@
                 </GroupBox>
             </Grid>
         </DockPanel>
-        <GridSplitter Grid.Column="1" Grid.RowSpan="2" Width="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" IsTabStop="False" ResizeDirection="Columns" />
-        <xctk:PropertyGrid Grid.Column="2" Grid.RowSpan="2" Margin="5" VerticalAlignment="Stretch" Name="pgAppSettings" SelectedObject="{Binding}" SelectedObjectName="" ShowTitle="False" />
-        <StatusBar Grid.Row="2" Grid.ColumnSpan="3"
+        <GridSplitter Grid.Column="2" Grid.RowSpan="2" Width="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext" IsTabStop="False" ResizeDirection="Columns" />
+        <xctk:PropertyGrid Grid.Column="3" Grid.RowSpan="2" Margin="5" VerticalAlignment="Stretch" Name="pgAppSettings" SelectedObject="{Binding}" SelectedObjectName="" ShowTitle="False" Background="#FF7A90B0" />
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="4"
             Margin="5,0,5,5"
             Width="Auto">
             <StatusBarItem
                 VerticalContentAlignment="Top"
                 Focusable="False"
-                Padding="0">
+                Padding="0" Background="#CC14345B">
                 <TextBlock
                     Style="{StaticResource StatusBarTextBlock}"
                     x:Name="sbAppStatus"><Run Text="Ready"/></TextBlock>
