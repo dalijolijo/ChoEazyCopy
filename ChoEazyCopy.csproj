@@ -80,6 +80,9 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cinchoo.Core, Version=1.0.9.5, Culture=neutral, PublicKeyToken=b7dacd80ff3e33de, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -124,10 +127,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ChoDonateButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,9 +137,6 @@
     </Compile>
     <Compile Include="ChoAppCmdLineArgs.cs" />
     <Compile Include="ChoAppSettings.cs" />
-    <Compile Include="ChoDonateButton.xaml.cs">
-      <DependentUpon>ChoDonateButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ChoRoboCopyManager.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -201,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\Cinchoo.Core.dll" />
-    <Resource Include="Resources\Donate.gif" />
     <EmbeddedResource Include="Lib\System.Windows.Interactivity.dll" />
     <EmbeddedResource Include="Lib\MahApps.Metro.dll" />
   </ItemGroup>
